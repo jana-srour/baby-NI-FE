@@ -56,8 +56,6 @@ export default function LineDataset(props) {
               ]}
               yAxis={[
                 {
-                //min: props.minKpiValue,
-                //max: props.maxKpiValue,
                 label: 'KPIs',
                 },
             ]}

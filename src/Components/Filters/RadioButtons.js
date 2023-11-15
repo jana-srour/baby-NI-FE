@@ -15,8 +15,6 @@ export default function RowRadioButtonsGroup(props) {
         name="row-radio-buttons-group"
         value={props.selectedValue} onChange={(e) => props.onRadioChange(e.target.value)}
       >
-        {/* <FormControlLabel value="Hourly" control={<Radio />} label="Hourly" />
-        <FormControlLabel value="Daily" control={<Radio />} label="Daily" /> */}
         {props.options.map((option, index) => (
           <FormControlLabel
             key={option}

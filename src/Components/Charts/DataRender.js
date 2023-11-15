@@ -44,23 +44,9 @@ const colors = {
     rsL_Deviation: 'blue',
 };
 
-/* function getRandomColor() {
-    let color = '#';
-    const characters = '0123456789ABCDEF';
-    do {
-        color = '#';
-        for (let i = 0; i < 6; i++) {
-        color += characters[Math.floor(Math.random() * 16)];
-        }
-    } while (color === '#FFFFFF'); // Exclude white color
-
-    return color;
-} */
-
 export default function DataRenderer(props) {
 
     let formattedData;
-    //let dynamicColors;
     let series, dataset;
 
     // Format the data recieved to be prepared for graph preview
@@ -69,17 +55,8 @@ export default function DataRenderer(props) {
     }else if(props.Group === "NeType"){
         formattedData = formatTypeData(props.data, props.state);
     }
-    
-    // Handle colors for graph lines
-    /* dynamicColors = formattedData.reduce((acc, dataPoint) => {
-        Object.keys(colors).forEach((kpi) => {
-          if (!acc[kpi]) {
-            acc[kpi] = getRandomColor();
-          }
-        });
-        return acc;
-      }, {}); */
 
+      // KPI Drop Content
       const kpiMenuItems = Object.keys(colors).map(kpi => (
         <MenuItem key={kpi} value={kpi}>
           {kpi}
@@ -157,8 +134,6 @@ export default function DataRenderer(props) {
         selectOnChange={handleKPISelectChange}
         selectItems={kpiMenuItems}
         selectedKPIs={selectedKPIs}
-        minKpiValue={minKpiValue}
-        maxKpiValue={maxKpiValue}
         series={series}
         dataset={dataset}
         state={props.state}

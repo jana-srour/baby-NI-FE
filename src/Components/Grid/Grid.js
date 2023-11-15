@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
 
-import CustomizedTables from './Tables/Table';
+import CustomizedTables from './Table';
 
 // Prepare the Grid Styling
 const Item = styled(Paper)(({ theme }) => ({

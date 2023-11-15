@@ -10,6 +10,7 @@ import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlin
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import InsertDriveFileOutlinedIcon from '@mui/icons-material/InsertDriveFileOutlined';
+import ScrollDialog from './Dialog';
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -55,21 +56,32 @@ const StyledMenu = styled((props) => (
 export default function Options() {
   
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [dialogOpen, setDialogOpen] = React.useState(false);
+
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+    const optionId = event.currentTarget.id;
+
+    if (optionId === 'about-option') {
+      setDialogOpen(true);
+    } else {
+      setAnchorEl(event.currentTarget);
+    }
   };
+  
   const handleClose = () => {
     setAnchorEl(null);
+    setDialogOpen(false);
   };
 
   return (
     <div>
       <Button
         id="demo-customized-button"
-        aria-controls={open ? 'demo-customized-menu' : undefined}
+        aria-controls={anchorEl  ? 'demo-customized-menu' : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={anchorEl  ? 'true' : undefined}
         variant="contained"
         disableElevation
         onClick={handleClick}
@@ -83,27 +95,26 @@ export default function Options() {
           'aria-labelledby': 'demo-customized-button',
         }}
         anchorEl={anchorEl}
-        open={open}
+        open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
+        {/* <MenuItem onClick={handleClose} disableRipple>
           <LogoutIcon />
           Logout
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
           <ManageAccountsOutlinedIcon />
           User Settings
-        </MenuItem>
-        <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
+        </MenuItem> 
+        <Divider sx={{ my: 0.5 }} />*/}
+        <MenuItem onClick={handleClick} disableRipple id="about-option">
           <InfoOutlinedIcon />
           About
         </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <HelpOutlineIcon />
-          Help
-        </MenuItem>
       </StyledMenu>
+
+      <ScrollDialog open={dialogOpen} onClose={handleClose} />
+
     </div>
   );
 }

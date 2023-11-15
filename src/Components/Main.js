@@ -18,15 +18,15 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 
 import Options from './Header/Options';
-import NestedGridColumns from './Grid';
-import BarAnimation from './Charts/BarChart';
-import BasicArea from './Charts/LineChart';
+import NestedGridColumns from './Grid/Grid';
 import RowRadioButtonsGroup from './Filters/RadioButtons';
 import DataRenderer from './Charts/DataRender';
 import DateFilter from './Filters/DateFilter';
 
 import DocumentScannerOutlinedIcon from '@mui/icons-material/DocumentScannerOutlined';
 
+
+// Format and style the drawer
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -63,6 +63,7 @@ const ContentContainer = styled('div')({
   transition: 'margin-left 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms',
 });
 
+// Style the header bar
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
@@ -98,6 +99,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
+// Style the body container
 const BodyContainer = styled('div', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ open }) => ({
     marginLeft: open ? `${drawerWidth}px` : '100px',
@@ -115,24 +117,7 @@ const StyledListItem = styled(ListItem)(({ theme, selected }) => ({
   },
 }));
 
-
-/* const FilterContainer = styled('div')({
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  marginBottom: '20px',
-  marginLeft: '10px',
-});
-
-const RadioContainer = styled('div')({
-  marginTop: '50px',
-  marginRight: '50px',
-  marginLeft: '10px',
-  marginBottom: '50px',
-});
- */
-
-
+// Style the filter container
 const FilterContainer = styled('div')({
   display: 'grid',
   gridTemplateColumns: 'auto auto',
@@ -149,7 +134,7 @@ const RadioContainer = styled('div')({
   gap: '40px',
 });
 
-
+// Style the body container that includes the chart and the grid
 const ChartContainer = styled('div')({
   marginTop: '50px',
   marginRight: '50px',
@@ -162,13 +147,14 @@ const GridContainer = styled('div')({
   marginLeft: '10px',
 });
 
+// Style the message box if no data present
 const styleMessagePreview = {
   container: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundColor: '#f0f0f0', // Light background color
+    backgroundColor: '#f0f0f0',
     marginRight: '20px',
   },
   innerContainer: {
@@ -176,17 +162,17 @@ const styleMessagePreview = {
   },
   title: {
     fontSize: '2em',
-    color: '#333', // Dark text color
+    color: '#333',
   },
   message: {
     fontSize: '1.2em',
-    color: '#666', // Medium dark text color
+    color: '#666',
     marginBottom: '20px',
   },
   image: {
     maxWidth: '100%',
     height: 'auto',
-    borderRadius: '10px', // Optional: Add rounded corners to the image
+    borderRadius: '10px',
   },
 };
 
@@ -194,13 +180,16 @@ export default function Main(props) {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
+  // Control the states of radio buttons
   const [selectedValue, setSelectedValue] = useState({
     group1: 'Hourly',
     group2: 'NeAlias',
   });
 
+  // Control the state of the date picker
   const [selectedDateRange, setSelectedDateRange] = useState({ startDate: null, endDate: null });
 
+  // Control the drawer selected item
   const [selectedItem, setSelectedItem] = useState('Dashboard');
 
   const handleDrawerToggle = () => {
@@ -234,7 +223,7 @@ export default function Main(props) {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Dashboard', 'Administartion'].map((text, index) => (
+          {['Dashboard'].map((text, index) => (
             <StyledListItem key={text} disablePadding selected={selectedItem === text} button onClick={() => handleListItemClick(text)}>
               <ListItemButton>
                 <ListItemIcon>

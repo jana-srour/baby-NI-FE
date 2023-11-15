@@ -5,6 +5,7 @@ import { Grid, Typography } from '@mui/material';
 
 export default function DateFilter(props) {
   
+  // Controls the states for the start and end dates pickers
   const [selectedStartDate, setSelectedStartDate] = React.useState(null);
   const [selectedEndDate, setSelectedEndDate] = React.useState(null);
 
@@ -22,7 +23,6 @@ export default function DateFilter(props) {
 
   React.useEffect(() => {
     handleDateChange(selectedStartDate, selectedEndDate);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedStartDate, selectedEndDate]);
 
   return (
