@@ -15,7 +15,7 @@ const formatAliasData = (data, state) => {
     return data
       .filter((item) => item.neAlias.trim() !== '')
       .map((item) => ({
-        time: item.time ? new Date(item.time) : null,
+        time: item.dateTime_Key ? new Date(item.dateTime_Key) : null,
         neAlias: String(item.neAlias),
         rsL_Input_Power: item.rsL_Input_Power ? parseFloat(item.rsL_Input_Power) : 0,
         max_RX_Level: item.max_RX_Level ? parseFloat(item.max_RX_Level) : 0,
@@ -29,7 +29,7 @@ const formatAliasData = (data, state) => {
     return data
       .filter((item) => item.neType.trim() !== '')
       .map((item) => ({
-        time: item.time ? new Date(item.time) : null,
+        time: item.dateTime_Key ? new Date(item.dateTime_Key) : null,
         neType: String(item.neType),
         rsL_Input_Power: item.rsL_Input_Power ? parseFloat(item.rsL_Input_Power) : 0,
         max_RX_Level: item.max_RX_Level ? parseFloat(item.max_RX_Level) : 0,

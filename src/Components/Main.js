@@ -297,7 +297,7 @@ export default function Main(props) {
                   {props.data.hourlyNeAliasdata.length > 0 ? (
                     <DataRenderer 
                       data={props.data.hourlyNeAliasdata.filter(item => {
-                          const date = Date.parse(item.time);
+                          const date = Date.parse(item.dateTime_Key);
                           return (
                             (!selectedDateRange.startDate || date >= Date.parse(selectedDateRange.startDate)) &&
                             (!selectedDateRange.endDate || date <= Date.parse(selectedDateRange.endDate))
@@ -313,7 +313,7 @@ export default function Main(props) {
                 <GridContainer container>
                   <NestedGridColumns
                     data={props.data.hourlyNeAliasdata.filter(item => {
-                      const date = Date.parse(item.time);
+                      const date = Date.parse(item.dateTime_Key);
                       return (
                         (!selectedDateRange.startDate || date >= Date.parse(selectedDateRange.startDate)) &&
                         (!selectedDateRange.endDate || date <= Date.parse(selectedDateRange.endDate))
@@ -332,7 +332,7 @@ export default function Main(props) {
                   {props.data.dailyNeAliasdata.length > 0 ? (
                     <DataRenderer 
                     data={props.data.dailyNeAliasdata.filter(item => {
-                      const date = Date.parse(item.time);
+                      const date = Date.parse(item.dateTime_Key);
                       return (
                         (!selectedDateRange.startDate || date >= Date.parse(selectedDateRange.startDate)) &&
                         (!selectedDateRange.endDate || date <= Date.parse(selectedDateRange.endDate))
@@ -348,7 +348,7 @@ export default function Main(props) {
                 <GridContainer container>
                   <NestedGridColumns
                     data={props.data.dailyNeAliasdata.filter(item => {
-                      const date = Date.parse(item.time);
+                      const date = Date.parse(item.dateTime_Key);
                       return (
                         (!selectedDateRange.startDate || date >= Date.parse(selectedDateRange.startDate)) &&
                         (!selectedDateRange.endDate || date <= Date.parse(selectedDateRange.endDate))
@@ -367,7 +367,7 @@ export default function Main(props) {
                   {props.data.hourlyNeTypedata.length > 0 ? (
                     <DataRenderer 
                       data={props.data.hourlyNeTypedata.filter(item => {
-                        const date = Date.parse(item.time);
+                        const date = Date.parse(item.dateTime_Key);
                         return (
                           (!selectedDateRange.startDate || date >= Date.parse(selectedDateRange.startDate)) &&
                           (!selectedDateRange.endDate || date <= Date.parse(selectedDateRange.endDate))
@@ -383,7 +383,7 @@ export default function Main(props) {
                 <GridContainer container>
                   <NestedGridColumns
                     data={props.data.hourlyNeTypedata.filter(item => {
-                      const date = Date.parse(item.time);
+                      const date = Date.parse(item.dateTime_Key);
                       return (
                         (!selectedDateRange.startDate || date >= Date.parse(selectedDateRange.startDate)) &&
                         (!selectedDateRange.endDate || date <= Date.parse(selectedDateRange.endDate))
@@ -403,7 +403,7 @@ export default function Main(props) {
                   {props.data.dailyNeTypedata.length > 0 ? (
                     <DataRenderer 
                       data={props.data.dailyNeTypedata.filter(item => {
-                        const date = Date.parse(item.time);
+                        const date = Date.parse(item.dateTime_Key);
                         return (
                           (!selectedDateRange.startDate || date >= Date.parse(selectedDateRange.startDate)) &&
                           (!selectedDateRange.endDate || date <= Date.parse(selectedDateRange.endDate))
@@ -419,7 +419,7 @@ export default function Main(props) {
                 <GridContainer container>
                   <NestedGridColumns
                     data={props.data.dailyNeTypedata.filter(item => {
-                      const date = Date.parse(item.time);
+                      const date = Date.parse(item.dateTime_Key);
                       return (
                         (!selectedDateRange.startDate || date >= Date.parse(selectedDateRange.startDate)) &&
                         (!selectedDateRange.endDate || date <= Date.parse(selectedDateRange.endDate))

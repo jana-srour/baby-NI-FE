@@ -91,7 +91,7 @@ export default function CustomizedTables(props) {
                 .map((item, index) => (
                   <StyledTableRow key={index}>
                     <StyledTableCell component="th" scope="row" align="center">
-                      {formatTime(item.time)}
+                      {formatTime(item.dateTime_Key)}
                     </StyledTableCell>
                     {props.Group === 'NeAlias' && <StyledTableCell align="center">{item.neAlias}</StyledTableCell>}
                     {props.Group === 'NeType' && <StyledTableCell align="center">{item.neType}</StyledTableCell>}
