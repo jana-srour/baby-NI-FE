@@ -29,7 +29,7 @@ export default function DateFilter(props) {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Grid container spacing={2} alignItems="center">
         <Grid item>
-          <Typography>Date:</Typography>
+          <Typography style={{ color: 'black', fontWeight: 'bold' }}>Date:</Typography>
         </Grid>
         <Grid item>
           <MobileDatePicker
@@ -40,7 +40,7 @@ export default function DateFilter(props) {
           />
         </Grid>
         <Grid item>
-          <Typography>to</Typography>
+          <Typography style={{ color: 'black', fontWeight: 'bold' }}>to</Typography>
         </Grid>
         <Grid item>
           <MobileDatePicker

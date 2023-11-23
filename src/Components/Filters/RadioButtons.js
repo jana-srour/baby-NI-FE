@@ -7,8 +7,8 @@ import FormLabel from '@mui/material/FormLabel';
 
 export default function RowRadioButtonsGroup(props) {
   return (
-    <FormControl>
-      {props.title}:
+    <FormControl style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+      <span style={{ color: 'black', fontWeight: 'bold', marginRight: '8px' }}>{props.title}:</span>
       <RadioGroup
         row
         aria-labelledby="demo-row-radio-buttons-group-label"

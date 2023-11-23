@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+import { createTheme, ThemeProvider, styled, useTheme } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -63,6 +63,15 @@ const ContentContainer = styled('div')({
   transition: 'margin-left 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms',
 });
 
+// Put a theme
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#8B0000', // Replace with your desired color
+    },
+  },
+});
+
 // Style the header bar
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -123,15 +132,24 @@ const FilterContainer = styled('div')({
   gridTemplateColumns: 'auto auto',
   gap: '20px',
   alignItems: 'center',
-  marginLeft: '15px',
+  marginLeft: '5px',
+  marginBottom: '20px',
+  backgroundColor: '#f0f0f0',
+  color: '#666',
+  paddingLeft: '20px',
+  width: '98%',
+  height: '100px',
+  borderRadius: '5px',
+  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)',
 });
 
 const RadioContainer = styled('div')({
-  marginTop: '50px',
-  marginBottom: '50px',
+  marginTop: '20px',
+  marginBottom: '20px',
   display: 'flex',
   flexDirection: 'row',
   gap: '40px',
+  marginRight: '-100px',
 });
 
 // Style the body container that includes the chart and the grid
@@ -156,6 +174,9 @@ const styleMessagePreview = {
     height: '100vh',
     backgroundColor: '#f0f0f0',
     marginRight: '20px',
+    marginBottom: '20px',
+    borderRadius: '5px',
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)',
   },
   innerContainer: {
     textAlign: 'center',
@@ -177,7 +198,7 @@ const styleMessagePreview = {
 };
 
 export default function Main(props) {
-  const theme = useTheme();
+  //const theme = useTheme();
   const [open, setOpen] = useState(false);
 
   // Control the states of radio buttons
@@ -237,6 +258,7 @@ export default function Main(props) {
         <Divider />
       </Drawer>
       <ContentContainer>
+      <ThemeProvider theme={theme}>
         <AppBar position="fixed" open={open}>
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -257,6 +279,7 @@ export default function Main(props) {
             </div>
           </Toolbar>
         </AppBar>
+        </ThemeProvider>
       </ContentContainer>
       <BodyContainer open={open}>
         <FilterContainer>
