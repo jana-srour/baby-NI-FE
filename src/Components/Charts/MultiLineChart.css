@@ -1,0 +1,68 @@
+/* Tooltip styling */
+
+.custom-tooltip {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 8px; /* Reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 0 10px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tooltip-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px; /* Reduced margin */
+  }
+  
+  .tooltip-color-box {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px; /* Reduced margin */
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .tooltip-label {
+    font-weight: bold;
+    margin-right: 4px; /* Reduced margin */
+  }
+  
+  .tooltip-info {
+    margin: 0;
+  }
+  
+  /* Add a subtle animation for a smoother appearance */
+  .custom-tooltip {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .custom-tooltip:hover {
+    transform: scale(1.05);
+  }
+  
+
+
+  /* Legend Styling */
+  .custom-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 80px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust the margin between legend items */
+  }
+  
+  .legend-color-box {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border-radius: 4px;
+  }
+  
+  .legend-label {
+    margin: 0;
+  }

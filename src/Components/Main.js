@@ -25,6 +25,7 @@ import DateFilter from './Filters/DateFilter';
 
 import DocumentScannerOutlinedIcon from '@mui/icons-material/DocumentScannerOutlined';
 
+import Logo from '../Logo.png';
 
 // Format and style the drawer
 const drawerWidth = 240;
@@ -270,6 +271,7 @@ export default function Main(props) {
               >
                 <MenuIcon />
               </IconButton>
+              <img src={Logo} alt="Logo" style={{height: '70px', width: '70px', marginRight: '10px', marginLeft: '10px'}} />
               <Typography variant="h6" noWrap>
                 Baby NI
               </Typography>
