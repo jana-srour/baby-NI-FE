@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     // Make a GET request to the API endpoint
-    axios.get('https://localhost:7192/api/DataResult')
+    axios.get('https://localhost:7192/api')
       .then(response => {
         // Update the state with the data received from the API
         setData(response.data);
