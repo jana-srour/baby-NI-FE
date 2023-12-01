@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  baby-ni-react-fe:
+    image: baby-ni-react-fe
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
