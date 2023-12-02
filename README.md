@@ -21,6 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 Runs the app in the docker container. \
 run command:
 ```bash
+docker build -t baby-ni-react-fe .
 docker-compose up -d baby-ni-react-fe
 ```
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
